@@ -127,7 +127,7 @@ const Informations: React.FC<InformationsProps> = ({weatherData}) => {
                     {weatherData.days[0].hours.map((hour: any, index: number) => {
                         if (index % 3 === 0) {
                             return(
-                                <div className="min-w-[50px] flex flex-col items-center gap-2 text-white bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 border border-gray-100 p-4">
+                                <div key={index} className="min-w-[50px] flex flex-col items-center gap-2 text-white bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 border border-gray-100 p-4">
                                     <Image src={getWeatherIcon(hour.icon)} width={30} height={30} alt="icon" />
                                     <p className="text-sm w-full">{formatTime(hour.datetime)}</p>
                                     <p className="text-sm">{hour.temp}°F</p>
